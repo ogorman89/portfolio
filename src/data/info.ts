@@ -4,60 +4,67 @@ export const info = {
   jobDescription: "Software Engineer",
   about: `I'm a software engineer based in Portland, Oregon.
    I love building things.
-   I'm a #100devs bootcamp student and currently building my portfolio with MongoDB, Express, React and Node. Stay tuned for more!
+   I'm a #100devs bootcamp student and currently building up my SWE portfolio. Stay tuned for more!
   `,
 
   experience: [
     {
-      name: "#100devs",
-      location: "remote",
+      name: "Freelance Software Engineer",
+      location: "Portland, Oregon & Remote",
       startDate: "Jul 2023",
       endDate: "Present",
       description: [
-        "✓ Developing",
-        "✓ Fixing",
+        "",
       ],
     },
 
     {
-      name: "Stack Metallurgical Group",
+      name: "Director of Finance & Accounting @ Stack Metallurgical Group",
       location: "Portland, Oregon",
       startDate: "Sep 2020",
       endDate: "Oct 2021",
       description: [
-        "✓ Developing ",
+        "",
       ],
     },
 
     {
-      name: "Lead Financial Analyst (Operations Controller)",
+      name: "Operations Controller @ Precision Castparts",
       location: "Portland, Oregon",
       startDate: "Jul 2012",
       endDate: "Sep 2020",
       description: [
-        "An ",
+        "",
       ],
     },
 
     {
-      name: "MATLAB Developer & Economic Research Assistant",
+      name: "MATLAB Developer @ University of Oregon",
       location: "Eugene, Oregon",
       startDate: "Dec 2010",
       endDate: "Jul 2012",
       description: [
-        "An ",
+        "",
       ],
     },
   ],
 
   education: [
     {
+      name: "#100devs Software Engineering Bootcamp",
+      location: "Remote, Oregon",
+      startDate: "Jul 2023",
+      endDate: "Present",
+      description: [
+        "Software Engineering with specialization in Full Stack Web Development","JavaScript, HTML, CSS","MongoDB, Express, React, Node",
+      ],
+    },{
       name: "University of Oregon",
       location: "Eugene, Oregon",
       startDate: "2008",
       endDate: "2012",
       description: [
-        "Dual Bachelor of Science in Economics & Business Administration", "Magna Cum Laude","Departmental Honors in Economics",
+        "Dual Bachelor of Science in Economics & Business Administration", "Minor in Computer Information Technology","Magna Cum Laude","Departmental Honors in Economics",
       ],
     },
   ],
