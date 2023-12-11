@@ -2,14 +2,13 @@ export const info = {
   baseUrl: "https://ianogorman.dev",
   name: "Ian O'Gorman",
   jobDescription: "Software Engineer",
-  about: `I'm a software engineer based in Portland, Oregon.
-   I love building things.
-   I'm a #100devs bootcamp student and currently building up my SWE portfolio. Stay tuned for more!
+  about: `Hi 👋 I'm Ian, a software engineer based in Portland, Oregon.
+   I love building things. 🚧 I'm currently building this portfolio. 🚧 Stay tuned for more!
   `,
 
   experience: [
     {
-      name: "Freelance Software Engineer",
+      position: "Freelance Software Engineer",
       location: "Portland, Oregon & Remote",
       startDate: "Jul 2023",
       endDate: "Present",
@@ -19,7 +18,8 @@ export const info = {
     },
 
     {
-      name: "Director of Finance & Accounting @ Stack Metallurgical Group",
+      position: "Director of Finance & Accounting",
+      employer: "Stack Metallurgical Group",
       location: "Portland, Oregon",
       startDate: "Sep 2020",
       endDate: "Oct 2021",
@@ -29,7 +29,8 @@ export const info = {
     },
 
     {
-      name: "Operations Controller @ Precision Castparts",
+      position: "Operations Controller",
+      employer: "Precision Castparts Corp.",
       location: "Portland, Oregon",
       startDate: "Jul 2012",
       endDate: "Sep 2020",
@@ -39,7 +40,8 @@ export const info = {
     },
 
     {
-      name: "MATLAB Developer @ University of Oregon",
+      position: "MATLAB Developer",
+      employer: "University of Oregon",
       location: "Eugene, Oregon",
       startDate: "Dec 2010",
       endDate: "Jul 2012",
@@ -51,7 +53,7 @@ export const info = {
 
   education: [
     {
-      name: "#100devs",
+      position: "#100devs Agency",
       location: "Remote, Oregon",
       startDate: "Jul 2023",
       endDate: "Present",
@@ -59,7 +61,7 @@ export const info = {
         "Software Engineering with specialization in Full Stack Web Development","JavaScript, HTML, CSS","MongoDB, Express, React, Node",
       ],
     },{
-      name: "University of Oregon",
+      position: "University of Oregon",
       location: "Eugene, Oregon",
       startDate: "2008",
       endDate: "2012",
