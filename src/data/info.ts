@@ -51,7 +51,7 @@ export const info = {
 
   education: [
     {
-      name: "#100devs Software Engineering Bootcamp",
+      name: "#100devs",
       location: "Remote, Oregon",
       startDate: "Jul 2023",
       endDate: "Present",
@@ -71,7 +71,7 @@ export const info = {
 
   socialMedia: {
     github: "https://github.com/ogorman89",
-    email: "ianogorman@pm.me",
+    email: "mailto:ianogorman@pm.me",
     linkedin: "https://www.linkedin.com/in/iancogorman/",
   },
 
