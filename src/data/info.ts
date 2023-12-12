@@ -53,7 +53,7 @@ export const info = {
 
   education: [
     {
-      position: "#100devs Agency",
+      position: "#100devs",
       location: "Remote, Oregon",
       startDate: "Jul 2023",
       endDate: "Present",
