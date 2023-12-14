@@ -1,6 +1,5 @@
 ---
 import MetaHead from "../components/general/MetaHead.astro";
-import { Image } from 'astro:assets';
 import Footer from "@components/general/Footer.astro";
 import Navbar from "@components/general/Navbar.astro";
 import "../styles/style.css";
@@ -22,7 +21,7 @@ const {
 
 // Match the `heroImage` frontmatter string to its correct
 // Astro.glob() import of the file in the src/ directory.
-const assets = await Astro.glob('../assets/**/*');
+const assets = await Astro.glob('../../public/assets/media/**/*');
 const heroImageAsset = assets.find(asset => {
 	if (!heroImage) {
 		return false;
@@ -55,7 +54,7 @@ const heroImageAsset = assets.find(asset => {
 		<main>
 			<article>
 				{heroImageAsset && (
-					<Image
+					<img
 						width={720}
 						height={360}
 						src={heroImageAsset.default}
