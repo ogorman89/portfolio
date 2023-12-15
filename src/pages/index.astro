@@ -2,10 +2,17 @@
 import { info } from "@data";
 
 import Layout from "@layouts/Layout.astro";
+import Link from "@components/general/Link.astro";
 import Hero from "@components/home/Hero.astro";
 import Experience from "@components/home/Experience.astro";
+import PostCard from "@components/general/PostCard.astro";
 import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
 import MetaHead from "@components/general/MetaHead.astro";
+
+const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
+	(a, b) =>
+		new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+);
 
 const featureProjects = info.projects.reduce((accumulator, project) => {
   if (accumulator.length < 6 && project.isFeatured) {
@@ -13,6 +20,7 @@ const featureProjects = info.projects.reduce((accumulator, project) => {
   }
   return accumulator;
 }, []);
+
 ---
 
 <!DOCTYPE html>
@@ -28,10 +36,33 @@ const featureProjects = info.projects.reduce((accumulator, project) => {
   <body>
     <Layout>
       <Hero name={info.name} about={info.about} />
+      
+      <div class="gap-4">
+        <section>
+          
+          <h2 class="w-[15rem] dark:text-light my-12">LATEST BLOGS</h3>
+          {
+            posts.length !== 0 &&
+              posts
+                .slice(0, 2)
+                .map((post) => (
+                  <PostCard
+                    title={post.frontmatter.title}
+                    description={post.frontmatter.description}
+                    slug={post.url}
+                    date={post.frontmatter.date}
+                  />
+                ))
+          }
+          <Link class="text-blue" href="/blog" label="See all blogs" target="_self" />
+        </section>
+      </div>
+      
       <section>
-        <h2 class="w-[15rem] dark:text-light mt-16">PROJECTS</h2>
+        <h2 class="w-[15rem] dark:text-light mt-12">SELECTED PROJECTS</h2>
         <ProjectsWrapper projects={featureProjects} />
       </section>
+
       <Experience title={"EXPERIENCE"} details={info.experience} />
       <Experience title={"EDUCATION"} details={info.education} />
     </Layout>

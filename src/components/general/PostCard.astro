@@ -1,0 +1,55 @@
+---
+import formatDate from "../../utils/formatDate";
+
+export interface Props {
+	content: {
+		title: string;
+		description: string;
+		date?: string;
+		slug?: string;
+	};
+}
+
+const { title, date, description, slug } = Astro.props;
+---
+
+<a
+  class="group flex max-w-sm cursor-pointer flex-col gap-2 rounded-md border border-neutral-700 p-4 transition-all duration-300 hover:border-neutral-400"
+  href={slug}
+>
+  <div
+    class="flex w-full flex-col justify-between gap-2 md:flex-row md:items-center"
+  >
+    <p class="anchor">{title}</p>
+    <div class="flex flex-row items-center gap-4">
+      <p class="dark:text-light">{new Date(date).toLocaleDateString('en-us', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+    })}</p>
+
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        class=""
+      >
+        <path
+          d="M5.25 12.75L12.75 5.25"
+          stroke="#999999"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+        <path
+          d="M5.25 5.25H12.75V12.75"
+          stroke="#999999"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </div>
+  </div>
+
+  <p class="truncate dark:text-light">
+    {description}
+  </p>
+</a>

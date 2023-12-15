@@ -33,9 +33,17 @@
   p,
   li,
   a {
-    @apply font-inter text-dark-gray;
+    @apply font-inter;
   }
   .footer-icons {
     @apply dark:text-light flex items-center border border-dark dark:border-light p-4 rounded-lg justify-center;
   }
+}
+
+.anchor {
+  color: #33d2ff;
+}
+
+.anchor:visited {
+  color: #8e32dc;
 }
