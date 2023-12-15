@@ -7,7 +7,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	(a, b) =>
-		new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
+		new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
 );
 ---
 
@@ -40,12 +40,13 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 
   <body>
     <Layout>
+        <h1 style="line-height: 1.2;">Blog</h1>
         <content>
             <ul>
                 {posts.map((post) => (
                     <li>
-                        <time datetime={post.frontmatter.publishDate}>
-                            {new Date(post.frontmatter.publishDate).toLocaleDateString('en-us', {
+                        <time datetime={post.frontmatter.date}>
+                            {new Date(post.frontmatter.date).toLocaleDateString('en-us', {
                                 year: 'numeric',
                                 month: 'short',
                                 day: 'numeric',
