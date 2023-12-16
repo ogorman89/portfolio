@@ -2,6 +2,7 @@
 import { IProjectDetails } from "@types";
 const { projectDetail } = Astro.props as IProjectDetails;
 const { title, thumbnail, liveUrl, githubUrl } = projectDetail;
+console.log(thumbnail)
 ---
 
 <article class="w-full max-h-[25rem] overflow-hidden relative group">

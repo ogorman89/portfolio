@@ -1,7 +1,6 @@
 ---
 import MetaHead from "../components/general/MetaHead.astro";
-import Footer from "@components/general/Footer.astro";
-import Navbar from "@components/general/Navbar.astro";
+import Layout from "@layouts/Layout.astro";
 import "../styles/style.css";
 
 export interface Props {
@@ -16,22 +15,6 @@ export interface Props {
 const {
 	content: { title, description, date, heroImage },
 } = Astro.props as Props;
-
-
-// Match the `heroImage` frontmatter string to its correct
-// Astro.glob() import of the file in the src/ directory.
-const assets = await Astro.glob('../../public/assets/media/**/*');
-const heroImageAsset = assets.find(asset => {
-	if (!heroImage) {
-		return false;
-	}
-  	if (!asset.default?.src) {
-		return false;
-	}
-  	const index = asset.default.src.indexOf('/media/');
-  	return asset.default.src.slice(index) === heroImage;
-});
-console.log(heroImageAsset)
 ---
 
 <html>
@@ -50,27 +33,24 @@ console.log(heroImageAsset)
 	</head>
 
 	<body>
-		<Navbar />
-		<main>
+		<Layout>
 			<article>
-				{heroImageAsset && (
+				{heroImage && (
 					<img
 						width={720}
 						height={360}
-						src={heroImageAsset.default}
-						alt=""
+						src={`/src${heroImage}`}
+						alt="placeholder"
 					/>
-				)}
-				<h1 class="title">{title}</h1>
-				{date && <div>Published on {new Date(date).toLocaleDateString('en-us', {
-					year: 'numeric',
-					month: 'short',
-					day: 'numeric',
-				})}</div>}
-				<hr/>
-				<slot />
+					)}
+					<h1 class="title">{title}</h1>
+					{date && <div>Published on {new Date(date).toLocaleDateString('en-us', {
+						year: 'numeric',
+						month: 'short',
+						day: 'numeric',
+					})}</div>}
+					<slot />
 			</article>
-		</main>
-		<Footer />
+		</Layout>
 	</body>
 </html>

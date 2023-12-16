@@ -16,5 +16,4 @@ export default defineConfig({
     }),
     robotsTxt(),
   ],
-  experimental: { assets: true },
 });
