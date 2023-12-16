@@ -13,7 +13,7 @@ export interface Props {
 }
 
 const {
-	content: { title, description, date, heroImage },
+	content: { title, description, date},
 } = Astro.props as Props;
 ---
 
@@ -35,21 +35,13 @@ const {
 	<body>
 		<Layout>
 			<article>
-				{heroImage && (
-					<img
-						width={720}
-						height={360}
-						src={`/src${heroImage}`}
-						alt="placeholder"
-					/>
-					)}
-					<h1 class="title">{title}</h1>
-					{date && <div>Published on {new Date(date).toLocaleDateString('en-us', {
-						year: 'numeric',
-						month: 'short',
-						day: 'numeric',
-					})}</div>}
-					<slot />
+				<h1 class="title">{title}</h1>
+				{date && <div>Published on {new Date(date).toLocaleDateString('en-us', {
+					year: 'numeric',
+					month: 'short',
+					day: 'numeric',
+				})}</div>}
+				<slot />
 			</article>
 		</Layout>
 	</body>
