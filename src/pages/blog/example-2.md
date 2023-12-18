@@ -3,14 +3,21 @@ layout: ../../layouts/BlogPost.astro
 title: example 2
 description: this has a description
 date: 2023-12-16T19:44:13.223Z
-heroImage: /assets/images/ianavatar.jpg
 ---
-# Heading
+## Heading
 
-![](/assets/images/ianavatar.jpg)
+![this is a link](/assets/images/astro-portfolio-opt.webp)
 
+```json
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
 ```
-This is a code block
-```
 
-> # this is a quote
+:tent:
+
+[Google](https://www.google.com)
+
+> ## this is a quote

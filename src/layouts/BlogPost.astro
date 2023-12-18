@@ -36,12 +36,15 @@ const {
 		<Layout>
 			<article>
 				<h1 class="title">{title}</h1>
-				{date && <div>Published on {new Date(date).toLocaleDateString('en-us', {
+				<p class="dark:text-light">Ian O'Gorman</p>
+				{date && <p class="dark:text-light">{new Date(date).toLocaleDateString('en-us', {
 					year: 'numeric',
 					month: 'short',
 					day: 'numeric',
-				})}</div>}
-				<slot />
+				})}</p>}
+				<pre class="mt-4">
+					<slot />
+				</pre>
 			</article>
 		</Layout>
 	</body>
