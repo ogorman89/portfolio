@@ -81,7 +81,7 @@ export const info = {
     {
       title: "Portfolio",
       isFeatured: true,
-      thumbnail: "/assets/images/astro-portfolio.webp",
+      thumbnail: "/assets/images/astro-portfolio-opt.webp",
       githubUrl: "https://github.com/ogorman89/portfolio",
       liveUrl: "https://ianogorman.dev",
     },
