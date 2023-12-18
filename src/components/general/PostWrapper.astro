@@ -1,0 +1,35 @@
+---
+import { IPosts } from "@types";
+import PostCard from "./PostCard.astro";
+import Link from "./Link.astro";
+
+const { num, sectionTitle } = Astro.props as IPosts;
+
+const posts = (await Astro.glob('../../pages/blog/*.{md,mdx}')).sort(
+	(a, b) =>
+		new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+);
+---
+
+
+<div class="gap-4">
+    <section>
+      <h2 class="w-[15rem] dark:text-light my-12">{sectionTitle}</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {
+        posts.length !== 0 &&
+          posts
+            .slice(0, num)
+            .map((post) => (
+            
+              <PostCard
+                title={post.frontmatter.title}
+                description={post.frontmatter.description}
+                slug={post.url}
+                date={post.frontmatter.date}
+              />
+            ))
+      }
+      </div>
+    </section>
+  </div>

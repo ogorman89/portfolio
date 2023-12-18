@@ -6,13 +6,9 @@ import Link from "@components/general/Link.astro";
 import Hero from "@components/home/Hero.astro";
 import Experience from "@components/home/Experience.astro";
 import PostCard from "@components/general/PostCard.astro";
+import PostWrapper from "@components/general/PostWrapper.astro";
 import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
 import MetaHead from "@components/general/MetaHead.astro";
-
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) =>
-		new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
-);
 
 const featureProjects = info.projects.reduce((accumulator, project) => {
   if (accumulator.length < 6 && project.isFeatured) {
@@ -30,32 +26,14 @@ const featureProjects = info.projects.reduce((accumulator, project) => {
       title={"Portfolio"}
       description={info.about}
     />
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
 
   <body>
     <Layout>
       <Hero name={info.name} about={info.about} />
-      
-      <div class="gap-4">
-        <section>
-          
-          <h2 class="w-[15rem] dark:text-light my-12">LATEST BLOGS</h3>
-          {
-            posts.length !== 0 &&
-              posts
-                .slice(0, 2)
-                .map((post) => (
-                  <PostCard
-                    title={post.frontmatter.title}
-                    description={post.frontmatter.description}
-                    slug={post.url}
-                    date={post.frontmatter.date}
-                  />
-                ))
-          }
-          <Link class="text-blue" href="/blog" label="See all blogs" target="_self" />
-        </section>
+      <PostWrapper sectionTitle="LATEST BLOGS" num="3" />
+      <div class="mt-4">
+        <Link href="/blog" label="See all blogs" target="_self" />
       </div>
       
       <section>
@@ -66,24 +44,5 @@ const featureProjects = info.projects.reduce((accumulator, project) => {
       <Experience title={"EXPERIENCE"} details={info.experience} />
       <Experience title={"EDUCATION"} details={info.education} />
     </Layout>
-    <script>
-      
-      declare global {
-        
-        interface Window {
-          netlifyIdentity: any;
-        }
-      }
-
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user: any) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>
