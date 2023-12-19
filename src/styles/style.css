@@ -45,9 +45,9 @@
   }
   pre a,
   a.anchor {
-    @apply font-inter text-blue hover:underline underline-offset-4;
+    @apply font-inter text-purple dark:text-blue hover:underline underline-offset-4;
   }
   p.anchor {
-    @apply font-inter dark:text-blue hover:underline underline-offset-4;
+    @apply font-inter text-purple dark:text-blue hover:underline underline-offset-4;
   }
 }
