@@ -2,8 +2,7 @@ export const info = {
   baseUrl: "https://ianogorman.dev",
   name: "Ian O'Gorman",
   jobDescription: "Software Engineer",
-  about: `Hi 👋 I'm Ian, a software engineer based in Portland, Oregon.
-   I love building things. 🚧 I'm currently building this portfolio. 🚧 Stay tuned for more!
+  about: `Hi 👋 I'm Ian, a software engineer based in Portland, Oregon. I'm currently building projects for the web and slowly adding them to my portfilio. I'd love to connect and talk about what you are working on. DM me on LinkedIn!
   `,
 
   experience: [
@@ -53,7 +52,7 @@ export const info = {
 
   education: [
     {
-      position: "#100devs",
+      position: "100devs",
       location: "Remote, Oregon",
       startDate: "Jul 2023",
       endDate: "Present",
@@ -66,7 +65,7 @@ export const info = {
       startDate: "2008",
       endDate: "2012",
       description: [
-        "Dual Bachelor of Science in Economics & Business Administration", "Minor in Computer Information Technology","Magna Cum Laude","Departmental Honors in Economics",
+        "Dual Bachelor of Science in Economics & Business Administration", "Minor in Computer Information Technology",
       ],
     },
   ],

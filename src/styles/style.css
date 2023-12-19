@@ -22,13 +22,13 @@
   h4,
   h5,
   h6 {
-    @apply font-outfit;
+    @apply font-outfit font-bold;
   }
   h1 {
     @apply text-6xl sm:text-8xl main-heading;
   }
   h2 {
-    @apply text-xl font-semibold;
+    @apply text-xl font-bold;
   }
   p,
   li {
@@ -37,10 +37,17 @@
   .footer-icons {
     @apply dark:text-light flex items-center border border-dark dark:border-light p-4 rounded-lg justify-center;
   }
+  .footer-border {
+    @apply border-neutral-400 dark:border-neutral-700 p-4 hover:border-neutral-700 dark:hover:border-neutral-400;
+  }
   pre {
     @apply dark:text-light;
   }
-  a {
-    @apply font-inter text-blue;
+  pre a,
+  a.anchor {
+    @apply font-inter text-blue hover:underline underline-offset-4;
+  }
+  p.anchor {
+    @apply font-inter dark:text-blue hover:underline underline-offset-4;
   }
 }
