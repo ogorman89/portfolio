@@ -14,7 +14,7 @@ const posts = (await Astro.glob('../../pages/blog/*.{md,mdx}')).sort(
 
 <div class="gap-4">
     <section>
-      <h2 class="w-[15rem] dark:text-light my-12">{sectionTitle}</h3>
+      <h2 class="w-[15rem] dark:text-light my-4">{sectionTitle}</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       {
         posts.length !== 0 &&
