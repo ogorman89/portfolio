@@ -36,12 +36,20 @@ const {
 		<Layout>
 			<article>
 				<h1 class="title">{title}</h1>
-				<p class="dark:text-light">Ian O'Gorman</p>
-				{date && <p class="dark:text-light">{new Date(date).toLocaleDateString('en-us', {
-					year: 'numeric',
-					month: 'short',
-					day: 'numeric',
-				})}</p>}
+				<div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+					<div class="inline-flex items-center my-4 dark:text-light">
+						<img class="mr-4 w-16 h-16 rounded-full" src="/assets/images/ianSticker256.webp" alt="Ian O'Gorman">
+						<div>
+							<a href="/index" rel="author" class="text-xl font-bold">Ian O'Gorman</a>
+							<p class="">Software Engineer</p>
+							<p class="">{new Date(date).toLocaleDateString('en-us', {
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric',
+							})}</p>
+						</div>
+					</div>	
+				</div>
 				<pre class="mt-4">
 					<slot />
 				</pre>
